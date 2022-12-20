@@ -13,6 +13,29 @@ exports.createSchemaCustomization = async ({ actions }) => {
     },
   })
 
+  // CUSTOM ADDITION
+    actions.createTypes(`
+    interface HomepageNewsItem implements Node & HomepageBlock {
+        id: ID!
+        blocktype: String
+        title: String
+        blurb: String
+        effectiveDate: String
+    }
+    `)
+
+    actions.createTypes(`
+    type ContentfulHomepageNewsItem implements Node & HomepageNewsItem & HomepageBlock @dontInfer {
+        id: ID!
+        blocktype: String @blocktype
+        title: String
+        blurb: String
+        effectiveDate: String
+    }
+    `)
+
+  // END CUSTOM ADDITION
+
   actions.createFieldExtension({
     name: "imagePassthroughArgs",
     extend(options) {
@@ -623,4 +646,3 @@ exports.createPages = ({ actions }) => {
     component: require.resolve("./src/components/footer.js"),
   })
 }
-      

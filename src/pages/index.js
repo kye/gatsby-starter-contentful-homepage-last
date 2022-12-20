@@ -43,6 +43,8 @@ export const query = graphql`
         ...HomepageBenefitListContent
         ...HomepageStatListContent
         ...HomepageProductListContent
+        # New component fragment
+        ...HomepageNewsItemContent
       }
     }
   }

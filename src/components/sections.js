@@ -10,3 +10,5 @@ export { default as AboutHero } from "./about-hero"
 export { default as AboutStatList } from "./about-stat-list"
 export { default as AboutLeadership } from "./about-leadership"
 export { default as AboutLogoList } from "./about-logo-list"
+// add export for new component
+export { default as NewsItem } from "./newsitem"
