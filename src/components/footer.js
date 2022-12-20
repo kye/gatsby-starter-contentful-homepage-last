@@ -128,16 +128,14 @@ export default function Footer() {
               })}
           </FlexList>
           <FlexList>
-            <p>News Items should be here!</p>
+            <p>News Items should be total!</p>
             {
             console.log(newsItem)
             }
-                     
-                    <li>
+             
                       {newsItem}
-                    </li>
-                   
-              <p>News Items should be above!</p>
+                 
+                                 <p>News Items should be total!</p>
           </FlexList>
 
         </Flex>
