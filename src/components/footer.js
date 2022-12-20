@@ -101,7 +101,7 @@ export default function Footer() {
   const { links, meta, socialLinks, copyright } = data.layout.footer
 
   const { newsItem } = data.newsItem
-
+  
   return (
     <Box as="footer" paddingY={4}>
       <Container>
@@ -129,6 +129,9 @@ export default function Footer() {
           </FlexList>
           <FlexList>
             <p>News Items should be here!</p>
+            console.log('log')
+            console.log(newsItem)
+            
             {newsItem && 
               newsItem.map((item) => {
                 return (        
