@@ -92,11 +92,6 @@ export default function Footer() {
           }
         }
       }
-    }
-  `)
-
-  const newsItems = useStaticQuery(graphql`
-    query {
       newsItem {
         title
       }
@@ -104,6 +99,8 @@ export default function Footer() {
   `)
 
   const { links, meta, socialLinks, copyright } = data.layout.footer
+
+  const n = data.newsItems
 
   return (
     <Box as="footer" paddingY={4}>
@@ -132,8 +129,8 @@ export default function Footer() {
           </FlexList>
 
           <FlexList>
-            {newsItems &&
-              newsItems.map((item) => {
+            {n &&
+              n.map((item) => {
                 return (        
                     <li>
                       {item.title}
