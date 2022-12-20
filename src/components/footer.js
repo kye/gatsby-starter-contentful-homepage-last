@@ -129,9 +129,9 @@ export default function Footer() {
           </FlexList>
           <FlexList>
             <p>News Items should be here!</p>
-            console.log('log')
+            {
             console.log(newsItem)
-            
+            }
             {newsItem && 
               newsItem.map((item) => {
                 return (        
