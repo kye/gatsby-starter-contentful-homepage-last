@@ -92,16 +92,17 @@ export default function Footer() {
           }
         }
       }
-      newsItemCollection {
-        total
+      allNewsItem {
+        nodes {
+          title
+          id
+        }
       }
     }
   `)
 
   const { links, meta, socialLinks, copyright } = data.layout.footer
-
-  const { newsItem } = data.newsItem
-  
+   
   return (
     <Box as="footer" paddingY={4}>
       <Container>
@@ -128,16 +129,16 @@ export default function Footer() {
               })}
           </FlexList>
           <FlexList>
-            <p>News Items should be total!</p>
-            {
-            console.log(newsItem)
-            }
-             
-                      {newsItem}
-                 
-                                 <p>News Items should be total!</p>
+          <ul>      
+             {data.allNewsItem.nodes && data.allNewsItem.nodes.map((link) => {
+                return (
+                    <li>
+                    {link.title}
+                    </li>
+                )
+              })}
+          </ul>         
           </FlexList>
-
         </Flex>
         <Space size={5} />
         <Flex variant="start" responsive>
