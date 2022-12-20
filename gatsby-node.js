@@ -320,6 +320,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
     }
 
     interface NewsItem implements Node {
+      id: ID!
       title: String
     }
 
