@@ -127,8 +127,8 @@ export default function Footer() {
                 )
               })}
           </FlexList>
-
           <FlexList>
+            <p>News Items should be here!</p>
             {n &&
               n.map((item) => {
                 return (        
@@ -137,6 +137,7 @@ export default function Footer() {
                     </li>
                 )
               })}
+              <p>News Items should be above!</p>
           </FlexList>
 
         </Flex>
