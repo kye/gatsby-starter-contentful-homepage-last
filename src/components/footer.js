@@ -95,6 +95,14 @@ export default function Footer() {
     }
   `)
 
+  const newsItems = useStaticQuery(graphql`
+    query {
+      newsItem {
+        title
+      }
+    }
+  `)
+
   const { links, meta, socialLinks, copyright } = data.layout.footer
 
   return (
@@ -112,7 +120,7 @@ export default function Footer() {
                 const url = getSocialURL(link)
                 return (
                   url && (
-                    <li key={link.id}>
+                    <li key={link.title}>
                       <IconLink to={url}>
                         <VisuallyHidden>{getSocialName(link)}</VisuallyHidden>
                         {getSocialIcon(link)}
@@ -122,6 +130,18 @@ export default function Footer() {
                 )
               })}
           </FlexList>
+
+          <FlexList>
+            {newsItems &&
+              newsItems.map((item) => {
+                return (        
+                    <li>
+                      {item.title}
+                    </li>
+                )
+              })}
+          </FlexList>
+
         </Flex>
         <Space size={5} />
         <Flex variant="start" responsive>
