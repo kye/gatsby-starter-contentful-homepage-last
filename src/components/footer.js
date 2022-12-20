@@ -92,8 +92,8 @@ export default function Footer() {
           }
         }
       }
-      newsItem {
-        title
+      newsItemCollection {
+        total
       }
     }
   `)
@@ -132,14 +132,11 @@ export default function Footer() {
             {
             console.log(newsItem)
             }
-            {newsItem && 
-              newsItem.map((item) => {
-                return (        
+                     
                     <li>
-                      {item.title}
+                      {newsItem}
                     </li>
-                )
-              })}
+                   
               <p>News Items should be above!</p>
           </FlexList>
 
