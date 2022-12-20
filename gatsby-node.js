@@ -319,6 +319,10 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
     }
 
+    interface NewsItem implements Node {
+      title: String
+    }
+
     interface AboutStat implements Node {
       id: ID!
       value: String
@@ -543,6 +547,10 @@ exports.createSchemaCustomization = async ({ actions }) => {
       heading: String
       text: String
       image: HomepageImage @link(from: "image___NODE")
+    }
+
+    type ContentfulNewsItem implements Node & NewsItem {
+      title: String
     }
 
     type ContentfulAboutStat implements Node & AboutStat @dontInfer {
