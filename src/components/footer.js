@@ -100,7 +100,7 @@ export default function Footer() {
 
   const { links, meta, socialLinks, copyright } = data.layout.footer
 
-  const {newsItem, layout} = data
+  const { newsItem } = data.newsItem
 
   return (
     <Box as="footer" paddingY={4}>
