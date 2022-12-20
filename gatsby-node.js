@@ -321,7 +321,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
 
     interface NewsItem implements Node {
       id: ID!
-      title: String
+      title: String!
     }
 
     interface AboutStat implements Node {
@@ -550,10 +550,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage @link(from: "image___NODE")
     }
 
-    type ContentfulNewsItem implements Node & NewsItem {
-      title: String
-    }
-
     type ContentfulAboutStat implements Node & AboutStat @dontInfer {
       id: ID!
       value: String
@@ -609,6 +605,13 @@ exports.createSchemaCustomization = async ({ actions }) => {
       navItems: [HeaderNavItem] @link(from: "navItems___NODE")
       cta: HomepageLink @link(from: "cta___NODE")
     }
+
+    
+    type ContentfulNewsItem implements Node & NewsItem @dontInfer {
+      id: ID!   
+      title: String!
+    }
+
 
     type ContentfulSocialLink implements Node & SocialLink @dontInfer {
       id: ID!
